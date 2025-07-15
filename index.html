@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Malla Interactiva Educación Básica</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f9f9f9;
+  }
+  h1 {
+    text-align: center;
+  }
+  .semestre {
+    margin-bottom: 30px;
+  }
+  .semestre h2 {
+    background-color: #004080;
+    color: white;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  .ramo {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    min-width: 180px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .bloqueado {
+    background-color: #f7a1a1;
+    color: #700000;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  .desbloqueado {
+    background-color: #a1d7f7;
+    color: #003d66;
+  }
+  .aprobado {
+    background-color: #69c169;
+    color: white;
+    font-weight: bold;
+  }
+  #instrucciones {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    background: #e0f0ff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid #99ccee;
+  }
+</style>
+</head>
+<body>
+
+<h1>Malla Interactiva Licenciatura en Educación Básica mención Lenguaje y Comunicación</h1>
+<div id="instrucciones">
+  <p><b>Instrucciones:</b> Haz click en cada ramo para marcarlo como aprobado. Solo podrás marcar los ramos desbloqueados (con prerrequisitos cumplidos). Los ramos bloqueados aparecen en rojo y no se pueden marcar hasta cumplir los prerrequisitos.</p>
+</div>
+
+<div id="malla">
+
+  <div class="semestre" id="semestre-1">
+    <h2>Semestre I</h2>
+    <div id="ramo-MAT1920" class="ramo desbloqueado" onclick="toggleRamo('MAT1920')">MAT1920 - Números</div>
+    <div id="ramo-EDU0310" class="ramo desbloqueado" onclick="toggleRamo('EDU0310')">EDU0310 - Aprendizaje y desarrollo, teoría y práctica</div>
+    <div id="ramo-EDU0311" class="ramo desbloqueado" onclick="toggleRamo('EDU0311')">EDU0311 - Teoría de la educación</div>
+    <div id="ramo-LET001B" class="ramo desbloqueado" onclick="toggleRamo('LET001B')">LET001B - Fundamentos lingüísticos</div>
+    <div id="ramo-VRA100C" class="ramo desbloqueado" onclick="toggleRamo('VRA100C')">VRA100C - Español</div>
+  </div>
+
+  <div class="semestre" id="semestre-2">
+    <h2>Semestre II</h2>
+    <div id="ramo-MAT1930" class="ramo bloqueado" onclick="toggleRamo('MAT1930')">MAT1930 - Geometría I</div>
+    <div id="ramo-EDU0315" class="ramo bloqueado" onclick="toggleRamo('EDU0315')">EDU0315 - Aprendizaje y desarrollo escolar</div>
+    <div id="ramo-LET002B" class="ramo bloqueado" onclick="toggleRamo('LET002B')">LET002B - Ciencias sociales</div>
+    <div id="ramo-EDU0318" class="ramo bloqueado" onclick="toggleRamo('EDU0318')">EDU0318 - Currículum en la educación básica</div>
+  </div>
+
+  <div class="semestre" id="semestre-3">
+    <h2>Semestre III</h2>
+    <div id="ramo-QIM100P" class="ramo bloqueado" onclick="toggleRamo('QIM100P')">QIM100P - Química general</div>
+    <div id="ramo-EDU0319" class="ramo bloqueado" onclick="toggleRamo('EDU0319')">EDU0319 - Evaluación en educación básica</div>
+    <div id="ramo-EDU0330" class="ramo bloqueado" onclick="toggleRamo('EDU0330')">EDU0330 - Didáctica de la lectura</div>
+    <div id="ramo-EDU0323" class="ramo bloqueado" onclick="toggleRamo('EDU0323')">EDU0323 - Ciencias sociales</div>
+  </div>
+
+  <div class="semestre" id="semestre-4">
+    <h2>Semestre IV</h2>
+    <div id="ramo-EYP1020" class="ramo bloqueado" onclick="toggleRamo('EYP1020')">EYP1020 - Análisis de datos</div>
+    <div id="ramo-BIO155E" class="ramo bloqueado" onclick="toggleRamo('BIO155E')">BIO155E - Introducción a la biología</div>
+    <div id="ramo-EDU0317" class="ramo bloqueado" onclick="toggleRamo('EDU0317')">EDU0317 - Diversidad e inclusión en educación</div>
+  </div>
+
+  <div class="semestre" id="semestre-5">
+    <h2>Semestre V</h2>
+    <div id="ramo-EDU0332" class="ramo bloqueado" onclick="toggleRamo('EDU0332')">EDU0332 - Didáctica de la matemática II</div>
+    <div id="ramo-EDU0336" class="ramo bloqueado" onclick="toggleRamo('EDU0336')">EDU0336 - Didáctica de las ciencias naturales II</div>
+    <div id="ramo-EDU0322" class="ramo bloqueado" onclick="toggleRamo('EDU0322')">EDU0322 - Literatura para niños</div>
+  </div>
+
+  <div class="semestre" id="semestre-6">
+    <h2>Semestre VI</h2>
+    <div id="ramo-EDU0333" class="ramo bloqueado" onclick="toggleRamo('EDU0333')">EDU0333 - Didáctica de la escritura</div>
+    <div id="ramo-FIS119E" class="ramo bloqueado" onclick="toggleRamo('FIS119E')">FIS119E - Física general para educación</div>
+    <div id="ramo-EDU0331" class="ramo bloqueado" onclick="toggleRamo('EDU0331')">EDU0331 - Didáctica de las ciencias sociales</div>
+  </div>
+
+  <div class="semestre" id="semestre-7">
+    <h2>Semestre VII</h2>
+    <div id="ramo-EDU0321" class="ramo bloqueado" onclick="toggleRamo('EDU0321')">EDU0321 - Seminario de investigación en educación</div>
+    <div id="ramo-EDU0335" class="ramo bloqueado" onclick="toggleRamo('EDU0335')">EDU0335 - Didáctica de la geografía</div>
+  </div>
+
+  <div class="semestre" id="semestre-8">
+    <h2>Semestre VIII</h2>
+    <div id="ramo-EDU0337" class="ramo bloqueado" onclick="toggleRamo('EDU0337')">EDU0337 - Didáctica de las competencias comunicativas</div>
+    <div id="ramo-EDU0361" class="ramo bloqueado" onclick="toggleRamo('EDU0361')">EDU0361 - Literatura infantil y juvenil</div>
+    <div id="ramo-EDU0363" class="ramo bloqueado" onclick="toggleRamo('EDU0363')">EDU0363 - Didáctica de la comunicación</div>
+  </div>
+
+  <div class="semestre" id="semestre-9">
+    <h2>Semestre IX</h2>
+    <div id="ramo-EDU0316" class="ramo bloqueado" onclick="toggleRamo('EDU0316')">EDU0316 - Licenciada/o en educación</div>
+  </div>
+
+  <div class="semestre" id="semestre-10">
+    <h2>Semestre X</h2>
+    <div id="ramo-LET003B" class="ramo bloqueado" onclick="toggleRamo('LET003B')">LET003B - Gestión y liderazgo en el aula</div>
+  </div>
+
+</div>
+
+<script>
+  // Estado: si un ramo está aprobado o no
+  const aprobado = {};
+
+  // Lista de todos los ramos para inicializar en falso
+  const ramos = [
+    "MAT1920","EDU0310","EDU0311","LET001B","VRA100C",
+    "MAT1930","EDU0315","LET002B","EDU0318",
+    "QIM100P","EDU0319","EDU0330","EDU0323",
+    "EYP1020","BIO155E","EDU0317",
+    "EDU0332","EDU0336","EDU0322",
+    "EDU0333","FIS119E","EDU0331",
+    "EDU0321","EDU0335",
+    "EDU0337","EDU0361","EDU0363",
+    "EDU0316",
+    "LET003B"
+  ];
+
+  ramos.forEach(r => aprobado[r] = false);
+
+  // Prerrequisitos de cada ramo (deben estar todos aprobados para desbloquear)
+  const prerequisitos = {
+    "MAT1930": ["MAT1920"],
+    "EDU0315": ["EDU0310"],
+    "LET002B": ["LET001B","EDU0315","EDU0319"], 
+    "EDU0318": ["EDU0315"],
+    "QIM100P": [],
+    "EDU0319": ["EDU0318"],
+    "EDU0330": ["EDU0319"],
+    "EDU0323": ["EDU0319"],
+    "EYP1020": ["MAT1930"],
+    "BIO155E": [],
+    "EDU0317": [],
+    "EDU0332": ["MAT1930","EDU0319"],
+    "EDU0336": ["EDU0319"],
+    "EDU0322": ["EDU0330"],
+    "EDU0333": ["EDU0332"],
+    "FIS119E": [],
+    "EDU0331": ["EDU0319"],
+    "EDU0321": ["EDU0333","EDU0331"],
+    "EDU0335": ["EDU0331"],
+    "EDU0337": ["EDU0333","EDU0335"],
+    "EDU0361": ["EDU0337"],
+    "EDU0363": ["EDU0337"],
+    "EDU0316": ["EDU0321","EDU0337"],
+    "LET003B": ["EDU0316"]
+  };
+
+  // Determina si se pueden desbloquear
+  function puedeDesbloquear(codigo) {
+    const prereqs = prerequisitos[codigo];
+    if (!prereqs || prereqs.length === 0) return true; // sin prerrequisitos
+    return prereqs.every(p => aprobado[p]);
+  }
+
+  function actualizarEstado() {
+    ramos.forEach(ramo => {
+      const div = document.getElementById('ramo-' + ramo);
+      if (!div) return;
+      if (aprobado[ramo]) {
+        div.classList.add('aprobado');
+        div.classList.remove('bloqueado');
+        div.classList.remove('desbloqueado');
+      } else {
+        if (puedeDesbloquear(ramo)) {
+          div.classList.add('desbloqueado');
+          div.classList.remove('bloqueado');
+          div.classList.remove('aprobado');
+        } else {
+          div.classList.add('bloqueado');
+          div.classList.remove('desbloqueado');
+          div.classList.remove('aprobado');
+        }
+      }
+    });
+  }
+
+  function toggleRamo(codigo) {
+    if (!puedeDesbloquear(codigo)) return;
+    aprobado[codigo] = !aprobado[codigo];
+    actualizarEstado();
+  }
+
+  // Inicializa el estado
+  actualizarEstado();
+
+</script>
+
+</body>
+</html>
